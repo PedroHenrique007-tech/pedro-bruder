@@ -7,7 +7,7 @@ public class Exercicios {
         double v1 = 2.5;
         double v2 = 2.5;
         double valorFinal = v1+v2;
-         
+
         System.out.println("\nValor Final é de R$"+valorFinal);
 
         //Exercicio 2/
