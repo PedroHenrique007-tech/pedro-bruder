@@ -1,11 +1,11 @@
 public class Atividade4 {
     public static void main(String[] args) {
 
-        MateriaisDeConstrucao loja = new MateriaisDeConstrucao();
+        MateriaisDeConstrucaoQ4 loja = new MateriaisDeConstrucaoQ4();
 
-        Produto p1 = new Produto("Votoran", "Cimento CP2", 35.0, 10);
-        Produto p2 = new Produto("Tramontina", "Pá", 50.0, 5);
-        Produto p3 = new Produto("Tigre", "Cano PVC", 25.0, 20);
+        ProdutoQ4 p1 = new ProdutoQ4("Votoran", "Cimento CP2", 35.0, 10);
+        ProdutoQ4 p2 = new ProdutoQ4("Tramontina", "Pá", 50.0, 5);
+        ProdutoQ4 p3 = new ProdutoQ4("Tigre", "Cano PVC", 25.0, 20);
 
         loja.adicionarProduto(p1);
         loja.adicionarProduto(p2);
@@ -16,13 +16,13 @@ public class Atividade4 {
 
         // Mostrar todos
         System.out.println("Lista completa:");
-        for(Produto p : loja.obterLista()){
+        for(ProdutoQ4 p : loja.obterLista()){
             System.out.println(p);
         }
 
         // Filtrar por preço
         System.out.println("\nProdutos acima de 30:");
-        for(Produto p : loja.obterPrecoMaior(30)){
+        for(ProdutoQ4 p : loja.obterPrecoMaior(30)){
             System.out.println(p);
         }
     }

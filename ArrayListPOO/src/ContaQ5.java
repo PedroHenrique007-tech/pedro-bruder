@@ -1,9 +1,9 @@
-public class Conta {
+public class ContaQ5 {
 
     private String nomeTitular;
     private double saldo;
 
-    public Conta( String nomeTitular, double saldo){
+    public ContaQ5(String nomeTitular, double saldo){
         this.nomeTitular = nomeTitular;
         this.saldo = saldo;
     }

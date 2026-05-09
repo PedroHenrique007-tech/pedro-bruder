@@ -1,13 +1,13 @@
-public class Floricultura {
+public class FloriculturaQ2 {
 
     private String nome;
     private double preco;
     private String cliente;
 
-    public Floricultura(String nome, double preco, String cliente){
-        this.nome = nome;
-        this.preco = preco;
-        this.cliente = cliente;
+    public FloriculturaQ2(String nome, double preco, String cliente){
+        setNome(nome);
+        setPreco(preco);
+        setCliente(cliente);
     }
 
     public String getNome() {
@@ -45,6 +45,6 @@ public class Floricultura {
 
     @Override
     public String toString() {
-        return "\n nome= " + nome + "\n preco= " + preco + "\n cliente= " + cliente;
+        return "nome= " + nome + ", preco= " + preco + ", cliente= " + cliente;
     }
 }
