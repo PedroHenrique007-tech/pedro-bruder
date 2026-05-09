@@ -1,32 +1,32 @@
 import java.util.ArrayList;
 
-public class ListaRetanguloQ1 {
+public class Q1ListaRetangulo {
 
-    private ArrayList<RetanguloQ1> lista;
+    private ArrayList<Q1Retangulo> lista;
 
-    public ListaRetanguloQ1(){
+    public Q1ListaRetangulo(){
         lista = new ArrayList<>();
     }
 
-    public void add(RetanguloQ1 r){
+    public void add(Q1Retangulo r){
         lista.add(r);
     }
 
     public void mostrarTodos(){
-        for (RetanguloQ1 r : lista){
+        for (Q1Retangulo r : lista){
             System.out.println(r);
         }
     }
 
-    public RetanguloQ1 maiorArea(){
+    public Q1Retangulo maiorArea(){
 
         if (lista.isEmpty()) {
             throw new IllegalStateException("Lista vazia");
         }
 
-        RetanguloQ1 maior = lista.get(0);
+        Q1Retangulo maior = lista.get(0);
 
-        for (RetanguloQ1 r : lista){
+        for (Q1Retangulo r : lista){
             if (r.calcularArea() > maior.calcularArea()){
                 maior = r;
             }

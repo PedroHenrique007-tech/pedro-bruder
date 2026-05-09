@@ -1,11 +1,11 @@
-public class ProdutoQ4 {
+public class Q4Produto {
 
     private String marca;
     private String modelo;
     private double preco;
     private int estoqueQuantidade;
 
-    public ProdutoQ4(String marca, String modelo, double preco, int estoqueQuantidade){
+    public Q4Produto(String marca, String modelo, double preco, int estoqueQuantidade){
         this.marca = marca;
         this.modelo = modelo;
         this.preco = preco;

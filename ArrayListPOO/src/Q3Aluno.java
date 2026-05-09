@@ -1,4 +1,4 @@
-public class AlunoQ3 {
+public class Q3Aluno {
 
     private String nome;
     private int idade;
@@ -6,7 +6,7 @@ public class AlunoQ3 {
     private String curso;
     private double media;
 
-    public AlunoQ3(String nome, int idade, String matricula, String curso, double media) {
+    public Q3Aluno(String nome, int idade, String matricula, String curso, double media) {
         setNome(nome);
         setIdade(idade);
         setMatricula(matricula);

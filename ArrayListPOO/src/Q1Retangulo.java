@@ -1,9 +1,9 @@
-public class RetanguloQ1 {
+public class Q1Retangulo {
 
     private double largura;
     private double altura;
 
-    public RetanguloQ1(double largura, double altura){
+    public Q1Retangulo(double largura, double altura){
         setLargura(largura);
         setAltura(altura);
     }
