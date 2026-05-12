@@ -11,16 +11,16 @@ public class A4 {
         loja.adicionarProduto(p2);
         loja.adicionarProduto(p3);
 
-        // Teste venda
+
         p1.vender(3);
 
-        // Mostrar todos
+
         System.out.println("Lista completa:");
         for(Q4Produto p : loja.obterLista()){
             System.out.println(p);
         }
 
-        // Filtrar por preço
+
         System.out.println("\nProdutos acima de 30:");
         for(Q4Produto p : loja.obterPrecoMaior(30)){
             System.out.println(p);
