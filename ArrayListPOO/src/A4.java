@@ -1,25 +1,29 @@
-public class Ex4 {
-
+public class A4 {
     public static void main(String[] args) {
 
-        Q4Produto p1 = new Q4Produto("Vonder", "Martelo", 50, 10);
-        Q4Produto p2 = new Q4Produto("Bosch", "Regua", 20, 10);
-        Q4Produto p3 = new Q4Produto("3M", "Trena", 30, 10);
-        Q4Produto p4 = new Q4Produto("Makita", "Capacete", 80, 10);
-        Q4Produto p5 = new Q4Produto("Vonder", "Nível", 20, 10);
+        Q4MateriaisDeConstrucao loja = new Q4MateriaisDeConstrucao();
 
-        Q4MateriaisConstrucao m1 = new Q4MateriaisConstrucao();
+        Q4Produto p1 = new Q4Produto("Votoran", "Cimento CP2", 35.0, 10);
+        Q4Produto p2 = new Q4Produto("Tramontina", "Pá", 50.0, 5);
+        Q4Produto p3 = new Q4Produto("Tigre", "Cano PVC", 25.0, 20);
 
-        m1.adicionarProduto(p1);
-        m1.adicionarProduto(p2);
-        m1.adicionarProduto(p3);
-        m1.adicionarProduto(p4);
-        m1.adicionarProduto(p5);
+        loja.adicionarProduto(p1);
+        loja.adicionarProduto(p2);
+        loja.adicionarProduto(p3);
 
-        System.out.println(m1.obterProdutoMaisCaroMarca("Vonder"));
+        // Teste venda
+        p1.vender(3);
 
-        System.out.println(m1.produtosMarcaEPreco("Vonder", 10, 40));
+        // Mostrar todos
+        System.out.println("Lista completa:");
+        for(Q4Produto p : loja.obterLista()){
+            System.out.println(p);
+        }
 
+        // Filtrar por preço
+        System.out.println("\nProdutos acima de 30:");
+        for(Q4Produto p : loja.obterPrecoMaior(30)){
+            System.out.println(p);
+        }
     }
-
 }
