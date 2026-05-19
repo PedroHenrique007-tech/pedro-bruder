@@ -17,7 +17,7 @@ public class A5 {
 
         c2.sacar(100);
 
-        c1.transferir(c2, 300);
+        c1.transferir(300, c2);
 
         // Lista completa
         System.out.println("Lista de contas:");
