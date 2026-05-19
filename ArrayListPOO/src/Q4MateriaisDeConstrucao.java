@@ -1,30 +1,46 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Q4MateriaisDeConstrucao {
+public class Q4MateriaisConstrucao {
 
-    private List<Q4Produto> listaProduto;
+    private List<Q4Produto> listaProdutos;
 
-    public Q4MateriaisDeConstrucao(){
-        listaProduto = new ArrayList<>();
+    public Q4MateriaisConstrucao() {
+        listaProdutos = new ArrayList<>();
     }
 
-    public void adicionarProduto(Q4Produto produto){
-        listaProduto.add(produto);
+    public void adicionarProduto(Q4Produto p) {
+        listaProdutos.add(p);
     }
 
-    public List<Q4Produto> obterLista(){
-        return listaProduto;
-    }
+    public Q4Produto obterProdutoMaisCaroMarca(String marca) {
 
-    public List<Q4Produto> obterPrecoMaior(double maiorPreco){
-        List<Q4Produto> resultado = new ArrayList<>();
+        Produto produtoMaisCaro = null;
+        double maiorPreco = 0;
 
-        for(Q4Produto p : listaProduto){
-            if(p.getPreco() > maiorPreco){
-                resultado.add(p);
+        for (Q4Produto p : listaProdutos) {
+            if (p.getMarca().equals(marca) && p.getPreco() > maiorPreco) {
+                maiorPreco = p.getPreco();
+                produtoMaisCaro = p;
             }
         }
-        return resultado;
+
+        return produtoMaisCaro;
+
     }
+
+    public List<Q4Produto> produtosMarcaEPreco(String marca, double precoMin, double precoMax) {
+
+        List<Q4Produto> listaRetorno = new ArrayList<Q4Produto>();
+
+        for (Q4Produto p : listaProdutos) {
+            if (p.getMarca().equals(marca) && p.getPreco() > precoMin && p.getPreco() < precoMax) {
+                listaRetorno.add(p);
+            }
+        }
+
+        return listaRetorno;
+
+    }
+
 }

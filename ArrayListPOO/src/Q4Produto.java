@@ -3,86 +3,75 @@ public class Q4Produto {
     private String marca;
     private String modelo;
     private double preco;
-    private int estoqueQuantidade;
+    private int qtdEstoque;
 
-    public Q4Produto(String marca, String modelo, double preco, int estoqueQuantidade){
-        this.marca = marca;
-        this.modelo = modelo;
-        this.preco = preco;
-        this.estoqueQuantidade = estoqueQuantidade;
+    public Q4Produto(String marca, String modelo, double preco, int qtdEstoque) {
+        setMarca(marca);
+        setModelo(modelo);
+        setPreco(preco);
+        setQtdEstoque(qtdEstoque);
     }
 
-    public void adicionarItens(int quantidade) {
-        if (quantidade > 0) {
-            estoqueQuantidade += quantidade;
-            System.out.println("Adicionado " + quantidade + " itens ao estoque.");
-        } else {
-            System.out.println("Erro! Quantia inválida.");
+    public void adicionarQtdEstoque(int quantidade) {
+        qtdEstoque += quantidade;
+    }
+
+    public void venderProduto(int quantidade) {
+        if (quantidade > qtdEstoque) {
+            throw new IllegalArgumentException("Produtos insuficientes");
         }
+
+        qtdEstoque -= quantidade;
     }
 
-    public void vender(int quantidade){
-        if (quantidade <= 0){
-            System.out.println("Quantidade inválida para venda.");
-        } else if (quantidade > estoqueQuantidade) {
-            System.out.println("Estoque insuficiente.");
-        } else {
-            estoqueQuantidade -= quantidade;
-            System.out.println("Venda realizada: " + quantidade + " itens.");
-        }
-    }
-
-    public String getMarca(){
+    public String getMarca() {
         return marca;
     }
 
-    public String getModelo(){
+    public void setMarca(String marca) {
+        if (marca == null || marca.isBlank()) {
+            throw new IllegalArgumentException("Marca inválida");
+        }
+        this.marca = marca;
+    }
+
+    public String getModelo() {
         return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        if (modelo == null || modelo.isBlank()) {
+            throw new IllegalArgumentException("Modelo inválido");
+        }
+        this.modelo = modelo;
     }
 
     public double getPreco() {
         return preco;
     }
 
-    public int getEstoqueQuantidade() {
-        return estoqueQuantidade;
-    }
-
-    public void setModelo(String modelo) {
-        if (modelo == null){
-            throw new IllegalArgumentException("Campo obrigatório.");
-        }
-        this.modelo = modelo;
-    }
-
-    public void setMarca(String marca) {
-        if (marca == null){
-            throw new IllegalArgumentException("Campo obrigatório.");
-        }
-        this.marca = marca;
-    }
-
     public void setPreco(double preco) {
-        if (preco <= 0 ){
-            throw new IllegalArgumentException("Preço deve ser maior que 0.");
+        if (preco < 0) {
+            throw new IllegalArgumentException("Preço inválido");
         }
         this.preco = preco;
     }
 
-    public void setEstoqueQuantidade(int estoqueQuantidade) {
-        if (estoqueQuantidade < 0 ){
-            throw new IllegalArgumentException("Estoque não pode ser negativo.");
+    public int getQtdEstoque() {
+        return qtdEstoque;
+    }
+
+    public void setQtdEstoque(int qtdEstoque) {
+        if (qtdEstoque < 0) {
+            throw new IllegalArgumentException("Quantidade em estoque inválido");
         }
-        this.estoqueQuantidade = estoqueQuantidade;
+        this.qtdEstoque = qtdEstoque;
     }
 
     @Override
     public String toString() {
-        return "Produto{" +
-                "marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", preco=" + preco +
-                ", estoque=" + estoqueQuantidade +
-                '}';
+        return "Produto [marca=" + marca + ", modelo=" + modelo + ", preco=" + preco + ", qtdEstoque=" + qtdEstoque
+                + "]";
     }
+
 }
