@@ -3,71 +3,64 @@ import java.util.List;
 
 public class Revendedora {
 
-        private List<Carro> estoque;
+    private List<Carro> listaCarro;
 
-        public Revendedora() {
-            estoque = new ArrayList<>();
-        }
-        public void adicionarCarro(Carro c) {
-
-            estoque.add(c);
-        }
-        public Carro buscarPelaPlaca(String placa) {
-
-            Carro DaPlaca = null;
-
-            for (Carro c : estoque) {
-                if (c.getPlaca().equalsIgnoreCase(placa)) {
-                    if (DaPlaca == null) {
-
-                        DaPlaca = c;
-                    }
-                }
-            }
-
-            return DaPlaca;
-        }
-    public Carro buscarMaiorPreco(String marca, double preco) {
-        Carro maior = null;
-
-        for (Carro c : estoque) {
-            if (c.getMarca().equalsIgnoreCase(marca)) {
-                if (maior == null || c.getPreco() > maior.getPreco()) {
-                    maior = c;
-                }
-            }
-        }
-        return maior;
-    }
-    public Carro maisCaro(String marca, int ano) {
-
-        Carro maisCaro = null;
-
-        for (Carro v : estoque) {
-
-            if (v.getMarca().equalsIgnoreCase(marca)) {
-
-                if (maisCaro == null || v.getPreco() > maisCaro.getPreco()) {
-
-                    maisCaro = v;
-                }
-            }
-        }
-
-        return maisCaro;
+    public Revendedora() {
+        listaCarro = new ArrayList<>();
     }
 
-    public Carro carrosDeUmaMarca(String marca, double preco) {
-        Carro maior = null;
-
-        for (Carro c : estoque) {
-            if (c.getMarca().equalsIgnoreCase(marca)) {
-                if (maior == null || c.getPreco() > maior.getPreco()) {
-                    maior = c;
-                }
-            }
-        }
-        return maior;
+    public void adicionar(Carro c) {
+        listaCarro.add(c);
     }
 
+    public Carro obterCarroPorPlaca(String placa) {
+
+        Carro placaCarro = null;
+
+        for (Carro c : listaCarro) {
+            if (c.getPlaca().equals(placa)) {
+                placaCarro = c;
+            }
+        }
+
+        return placaCarro;
+    }
+
+    public Carro carroMaisCaroAno(int ano) {
+
+        Carro carroMaisCaro = null;
+        double maisCaro = 0;
+
+        for (Carro c : listaCarro) {
+
+            if (c.getAno() == ano && maisCaro < c.getPreco()) {
+
+                c.depreciacao(c.getPreco(), ano);
+
+                maisCaro = c.getPreco();
+                carroMaisCaro = c;
+            }
+        }
+
+        return carroMaisCaro;
+    }
+
+    public List<Carro> carrosMarca(String marca,
+                                   double precoMin,
+                                   double precoMax) {
+
+        List<Carro> listaRetorno = new ArrayList<>();
+
+        for (Carro c : listaCarro) {
+
+            if (c.getMarca().equals(marca)
+                    && c.getPreco() > precoMin
+                    && c.getPreco() < precoMax) {
+
+                listaRetorno.add(c);
+            }
+        }
+
+        return listaRetorno;
+    }
 }

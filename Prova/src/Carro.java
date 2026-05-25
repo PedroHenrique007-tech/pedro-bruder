@@ -8,30 +8,35 @@ public class Carro {
     private double preco;
     private LocalDate dataDeAquisicao;
 
+    public Carro(String marca, String modelo, String placa,
+                 int ano, double preco, LocalDate dataDeAquisicao) {
 
-    public Carro(String marca, String modelo, String placa, int ano ,double preco, LocalDate dataDeAquisicao) {
-       setMarca(marca);
+        setMarca(marca);
         setModelo(modelo);
         setPlaca(placa);
         setAno(ano);
         setPreco(preco);
 
+        this.dataDeAquisicao = dataDeAquisicao;
     }
 
-    public double depreciacao1(double valor, int ano) {
+    public double depreciacao(double valor, int ano) {
+
+        int anoAtual = LocalDate.now().getYear();
+
+        if (ano > anoAtual) {
+            throw new IllegalArgumentException("Ano informado é inválido.");
+        }
+
+        int idadeCarro = anoAtual - ano;
+
         if (ano < 2016) {
-            System.out.println("Seu carro desvalorizou: " + taxa1);
+            double taxa1 = 0.07;
+            return valor * Math.pow(1 - taxa1, idadeCarro);
         }
-        double taxa1 = 0.07;
-        return valor * Math.pow((1 + taxa1), ano);
-    }
-    public double depreciacao2(double valor, int ano) {
-        if (ano > 2016) {
-            System.out.println("Seu carro desvalorizou: " + taxa2);
-        }
-        double taxa2 = 0.05;
-        return valor * Math.pow((1 + taxa2), ano);
 
+        double taxa2 = 0.05;
+        return valor * Math.pow(1 - taxa2, idadeCarro);
     }
 
     public String getMarca() {
@@ -46,7 +51,9 @@ public class Carro {
         return placa;
     }
 
-    public int getAno() {return ano; }
+    public int getAno() {
+        return ano;
+    }
 
     public double getPreco() {
         return preco;
@@ -74,7 +81,7 @@ public class Carro {
     }
 
     public void setAno(int ano) {
-        if (ano > 2026){
+        if (ano > 2026) {
             throw new IllegalArgumentException("Ano não corresponde.");
         }
         this.ano = ano;
@@ -86,8 +93,14 @@ public class Carro {
         }
         this.preco = preco;
     }
-@Override
-    public String toString(){
-    return "Marca: "+marca+"Modelo: "+modelo+"Placa: "+placa+"Ano: " +ano+ "Data de Aquisição : "+ dataDeAquisicao +"Preço: "+preco;
-}
+
+    @Override
+    public String toString() {
+        return "Marca: " + marca +
+                " Modelo: " + modelo +
+                " Placa: " + placa +
+                " Ano: " + ano +
+                " Data de Aquisição: " + dataDeAquisicao +
+                " Preço: " + preco;
+    }
 }

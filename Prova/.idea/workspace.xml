@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cda56d5b-2e49-4b72-9d52-e6365676f82c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ArrayListPOO/src/Concessionaria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ArrayListPOO/src/ExConcessionaria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ArrayListPOO/src/Exe4Produ.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ArrayListPOO/src/Materiais.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ArrayListPOO/src/Produtos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ArrayListPOO/src/Veiculo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Automovel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Carro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Revendedora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArrayListPOO/src/A4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArrayListPOO/src/Q4MateriaisDeConstrucao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArrayListPOO/src/Q4Produto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Automovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Automovel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Carro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Carro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Revendedora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Revendedora.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,15 +33,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/pedro_h_bruder/Downloads/gith/pedro-bruder/Prova/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Automovel.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/pedro_h_bruder/Downloads/gith/pedro-bruder/pedro-bruder/Prova",
+    "onboarding.tips.debug.path": "C:/Users/pedro_h_bruder/Downloads/gith/pedro-bruder/Prova/src/Main.java"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Automovel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Automovel" />
+      <module name="Prova" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Automovel" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="cda56d5b-2e49-4b72-9d52-e6365676f82c" name="Changes" comment="" />
@@ -67,6 +75,11 @@
           <url>file://$PROJECT_DIR$/src/Main.java</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Automovel.java</url>
+          <line>2</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
