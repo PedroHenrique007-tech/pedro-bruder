@@ -3,65 +3,96 @@ import java.util.List;
 
 public class Revendedora {
 
-    private List<Carro> listaCarro;
+    /** Lista de carros na revendedora */
+    private List<Carro> listaCarros;
 
+    // Construtor
     public Revendedora() {
-        listaCarro = new ArrayList<>();
+        listaCarros = new ArrayList<Carro>();
     }
 
-    public void adicionarCarro(Carro c) {
-        listaCarro.add(c);
-    }
-
+    /**
+     * Obtém um carro da revendedora a partir da placa informada.
+     *
+     * @param placa - A placa do carro a ser procurado.
+     * @return O carro correspondente à placa informada, ou null caso não exista.
+     * @throws IllegalArgumentException se a placa for nula ou possuir tamanho
+     *                                  inválido.
+     */
     public Carro obterCarroPorPlaca(String placa) {
+        if (placa == null || placa.length() != 7 && placa.length() != 6) {
+            throw new IllegalArgumentException("Placa inválida");
+        }
 
-        Carro placaCarro = null;
-
-        for (Carro c : listaCarro) {
-
+        for (Carro c : listaCarros) {
             if (c.getPlaca().equals(placa)) {
-                placaCarro = c;
+                return c;
             }
         }
 
-        return placaCarro;
+        return null;
     }
 
-    public Carro carroMaisCaroAno(int ano) {
+    /**
+     * Obtém o carro mais caro de um determinado ano.
+     *
+     * @param ano - O ano dos carros a serem considerados.
+     * @return O carro mais caro do ano especificado, ou null se não houver carros
+     *         desse ano.
+     */
+    public Carro obterCarroMaisCaroAno(int ano) {
 
         Carro carroMaisCaro = null;
         double maisCaro = 0;
 
-        for (Carro c : listaCarro) {
-
-            if (c.getAnoFabricacao().getYear() == ano
-                    && c.getPreco() > maisCaro) {
-
+        for (Carro c : listaCarros) {
+            if (c.getAno() == ano && c.getPreco() > maisCaro) {
                 maisCaro = c.getPreco();
                 carroMaisCaro = c;
             }
-        }
 
+        }
 
         return carroMaisCaro;
     }
 
-    public List<Carro> carrosMarca(String marca,
-                                   double precoMin,
-                                   double precoMax) {
+    /**
+     * Lista os carros de uma determinada marca dentro de uma faixa de preço.
+     *
+     * @param marca       - A marca dos carros a serem listados.
+     * @param precoMinimo - O preço mínimo dos carros a serem listados.
+     * @param precoMaximo - O preço máximo dos carros a serem listados.
+     * @return Uma lista de carros que correspondem aos critérios especificados.
+     */
+    public List<Carro> listarCarrosMarcaEPreco(String marca, double precoMinimo, double precoMaximo) {
 
-        List<Carro> listaRetorno = new ArrayList<>();
+        List<Carro> listaCarrosPorAnoEPreco = new ArrayList<Carro>();
 
-        for (Carro c : listaCarro) {
-
-            if (c.getMarca().equalsIgnoreCase(marca)
-                    && c.getPreco() >= precoMin
-                    && c.getPreco() <= precoMax) {
-
-                listaRetorno.add(c);
+        for (Carro c : listaCarros) {
+            if (c.getMarca().equals(marca) && (c.getPreco() >= precoMinimo && c.getPreco() <= precoMaximo)) {
+                listaCarrosPorAnoEPreco.add(c);
             }
         }
 
-        return listaRetorno;
+        return listaCarrosPorAnoEPreco;
     }
+
+    /**
+     * Adiciona um carro à lista de carros da revendedora.
+     *
+     * @param c - O carro a ser adicionado.
+     */
+    public void adicionarCarro(Carro c) {
+        listaCarros.add(c);
+    }
+
+    /**
+     * Obtém a lista de carros da revendedora.
+     *
+     * @return A lista de carros disponíveis na revendedora.
+     */
+    public List<Carro> getListaCarros() {
+        return this.listaCarros;
+    }
+
 }
