@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Loja {
+public class Q12Loja {
 
-    private List<Notebook> listaDeProdutos;
+    private List<Q12Notebook> listaDeProdutos;
 
-    public Loja() {
-        listaDeProdutos = new ArrayList<Notebook>();
+    public Q12Loja() {
+        listaDeProdutos = new ArrayList<Q12Notebook>();
     }
 
-    public Notebook obterProdutoPeloPatrimonio(String patrimonio) {
+    public Q12Notebook obterProdutoPeloPatrimonio(String patrimonio) {
 
         if (patrimonio == null || patrimonio.length() != 7) {
             throw new IllegalArgumentException(" Patrimonio não corresponde ou não encontrado. ");
         }
 
-        for (Notebook n : listaDeProdutos) {
+        for (Q12Notebook n : listaDeProdutos) {
             if (n.getPatrimonio().equals(patrimonio)) {
                 return n;
             }
@@ -24,12 +24,12 @@ public class Loja {
         return null;
     }
 
-    public Notebook obterProdutoMaisCaroAno(int ano) {
+    public Q12Notebook obterProdutoMaisCaroAno(int ano) {
 
-        Notebook notebookMaisCaro = null;
+        Q12Notebook notebookMaisCaro = null;
         double maisCaroAno = 0;
 
-        for (Notebook n : listaDeProdutos) {
+        for (Q12Notebook n : listaDeProdutos) {
 
             if (n.getAno() == ano && n.getPreco() > maisCaroAno) {
                 maisCaroAno = n.getPreco();
@@ -40,11 +40,11 @@ public class Loja {
         return notebookMaisCaro;
     }
 
-    public List<Notebook> obterProdutoDaMesmaMarcaEntreValores(String marca, double precoMaximo, double precoMinimo) {
+    public List<Q12Notebook> obterProdutoDaMesmaMarcaEntreValores(String marca, double precoMaximo, double precoMinimo) {
 
-        List<Notebook> obterProdutosMarcaPreco = new ArrayList<Notebook>();
+        List<Q12Notebook> obterProdutosMarcaPreco = new ArrayList<Q12Notebook>();
 
-        for (Notebook n : listaDeProdutos) {
+        for (Q12Notebook n : listaDeProdutos) {
 
             if (n.getMarca().equals(marca)
                     && n.getPreco() >= precoMinimo
@@ -57,11 +57,11 @@ public class Loja {
         return obterProdutosMarcaPreco;
     }
 
-    public void adicionarProduto(Notebook n) {
+    public void adicionarProduto(Q12Notebook n) {
         listaDeProdutos.add(n);
     }
 
-    public List<Notebook> getListaDeProdutos() {
+    public List<Q12Notebook> getListaDeProdutos() {
         return listaDeProdutos;
     }
 }

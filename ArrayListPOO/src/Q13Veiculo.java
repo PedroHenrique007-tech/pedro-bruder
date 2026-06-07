@@ -1,7 +1,7 @@
 
     import java.time.LocalDate;
 
-    public class Veiculo {
+    public class Q13Veiculo {
 
         private String marca;
         private String modelo;
@@ -9,8 +9,8 @@
         private int quantidadeEstoque;
         private LocalDate anoFabricacao;
 
-        public Veiculo(String marca, String modelo, double preco,
-                       int quantidadeEstoque, LocalDate anoFabricacao) {
+        public Q13Veiculo(String marca, String modelo, double preco,
+                          int quantidadeEstoque, LocalDate anoFabricacao) {
 
             setMarca(marca);
             setModelo(modelo);

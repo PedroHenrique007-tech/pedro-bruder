@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Notebook {
+public class Q12Notebook {
 
     private String marca;
     private String modelo;
@@ -9,8 +9,8 @@ public class Notebook {
     private double preco;
     private LocalDate dataDeEntrada;
 
-    public Notebook(String marca, String modelo, String patrimonio, int ano, double preco,
-                    LocalDate dataDeEntrada) {
+    public Q12Notebook(String marca, String modelo, String patrimonio, int ano, double preco,
+                       LocalDate dataDeEntrada) {
 
         setMarca(marca);
         setModelo(modelo);
